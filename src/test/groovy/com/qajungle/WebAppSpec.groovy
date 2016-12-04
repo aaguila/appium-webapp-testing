@@ -3,8 +3,6 @@ package com.qajungle
 import io.appium.java_client.android.AndroidDriver
 import io.appium.java_client.remote.MobileCapabilityType;
 
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By
 import org.openqa.selenium.WebElement
@@ -12,9 +10,9 @@ import org.openqa.selenium.remote.DesiredCapabilities
 import spock.lang.Specification
 
 /**
- * Test for Android devices with Appium
+ * Test for Soucelabs testing webapp
  */
-class AndroidSpec extends Specification{
+class WebAppSpec extends Specification{
 
     DesiredCapabilities capabilities
     WebDriver driver
@@ -41,13 +39,12 @@ class AndroidSpec extends Specification{
      * Check that we can populate comments field in form
      */
     def "Populate comments field in form"() {
-        given: "a testing web page"
-        driver.get("http://saucelabs.com/test/guinea-pig");
-        when: "a element to test"
-        WebElement div = driver.findElement(By.id("i_am_an_id"));
-        then: "we have a correct text"
-        assert "I am a div" == div.getText() //check the text retrieved matches expected value
-        driver.findElement(By.id("comments")).sendKeys("My comment"); //populate the comments field by id.
+        given: "a saucelabs testing web page"
+        driver.get("http://qajungle.com")
+        when: "a link element to test"
+        WebElement link = driver.findElement(By.cssSelector('#menu-item-26 > a:nth-child(1)'))
+        then: "we have a correct text link"
+        assert "Ticketbis Engineering" == link.getText()
     }
 
 }
