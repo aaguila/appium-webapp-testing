@@ -36,10 +36,10 @@ class WebAppSpec extends Specification{
     }
 
     /**
-     * Check that we can populate comments field in form
+     * Check that we can access to ticketbis engineering link
      */
-    def "Populate comments field in form"() {
-        given: "a saucelabs testing web page"
+    def "Check if the qajungle ticketbis link is correct"() {
+        given: "a qajungle blog web page"
         driver.get("http://qajungle.com")
         when: "a link element to test"
         WebElement link = driver.findElement(By.cssSelector('#menu-item-26 > a:nth-child(1)'))
