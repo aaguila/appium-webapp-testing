@@ -1,2 +1,5 @@
 # appium-webapp-testing
-Gradle application to test webapps in real mobile devices
+
+Descripción:
+Aplicación Groovy para testear aplicaciones webs en dispositivos móviles reales. 
+La aplicación esta hecha como pruebas para el blog qajungle.com
